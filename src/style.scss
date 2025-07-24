@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "reset";
+
+$primary-red: rgba(255, 98, 87);
+$primary-red-transparent: rgba(255, 98, 87, 0.15);
+$blue-700: rgb(54, 56, 78);
+$blue-800: rgb(36, 39, 66);
+$gray: rgba(148, 148, 148);
+$font-stack: system-ui, "Roboto", sans-serif;
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: $blue-700;
+  font-family: $font-stack;
+
+  main {
+    display: flex;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    color: $blue-800;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      padding-inline: 3rem;
+      max-width: 30rem;
+
+      h1 {
+        font-size: 3.25rem;
+      }
+
+      ul {
+        padding: 0;
+        margin-top: 0.5rem;
+        li {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 0.5rem;
+          list-style-type: none;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+
+        label {
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: $blue-800;
+        }
+
+        input {
+          height: 3rem;
+          padding-left: 1.5rem;
+          padding-bottom: 0.25rem;
+          border: 1px solid lightgray;
+          color: $gray;
+          font-weight: 600;
+          border-radius: 0.5rem;
+          text-align: left;
+          outline: none;
+
+          &:user-invalid {
+            border-color: $primary-red;
+            background-color: $primary-red-transparent;
+            color: $primary-red;
+          }
+        }
+
+        button {
+          margin-top: 1rem;
+          height: 3rem;
+          color: white;
+          background-color: $blue-800;
+          font-weight: 700;
+          border: none;
+          border-radius: 0.5rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $blue-700;
+          }
+        }
+      }
+    }
+
+    img {
+      max-height: 35rem;
+    }
+  }
+}
