@@ -12,7 +12,7 @@ document.getElementById('form').addEventListener('submit', (e) => {
   showEmailValidity();
 
   if (isEmailValid) {
-    window.location = '../pages/success.html';
+    window.location = '../pages';
   }
 });
 
