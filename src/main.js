@@ -5,13 +5,14 @@ const validationError = document.querySelector('.validation-error');
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 let isEmailValid = emailValidity();
-showEmailValidity();
 
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
 
+  showEmailValidity();
+
   if (isEmailValid) {
-    console.log('submitted');
+    window.location = '../pages/success.html';
   }
 });
 
@@ -32,5 +33,11 @@ function showEmailValidity() {
 }
 
 function emailValidity() {
-  return emailRegex.test(emailInput.value);
+  if (emailRegex.test(emailInput.value)) {
+    console.log(emailInput.value);
+
+    localStorage.setItem('ariarzg-email-validated', emailInput.value);
+    return true;
+  }
+  return false;
 }

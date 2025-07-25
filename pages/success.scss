@@ -1,0 +1,68 @@
+@use '../src/reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+$primary-red: rgba(255, 98, 87);
+$primary-red-transparent: rgba(255, 98, 87, 0.15);
+$blue-700: rgb(54, 56, 78);
+$blue-800: rgb(36, 39, 66);
+$gray: rgba(148, 148, 148);
+$font-stack: system-ui, 'Roboto', sans-serif;
+
+body {
+  background-color: $blue-700;
+  display: grid;
+  place-items: center;
+  font-family: $font-stack;
+  color: $blue-800;
+}
+
+#success {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  background-color: white;
+  padding: 3rem;
+  border-radius: 2rem;
+  max-width: 27rem;
+}
+
+h1 {
+  font-size: 3.25rem;
+  line-height: 3.25rem;
+}
+
+img {
+  width: 4rem;
+}
+
+.sent-to {
+  font-weight: 700;
+}
+
+.dismiss {
+  background-color: $blue-800;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  padding-block: 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 27rem) {
+  body {
+    background-color: white;
+  }
+
+  #success {
+    height: 100svh;
+    border-radius: 0;
+    padding-top: 10rem;
+  }
+
+  .dismiss {
+    margin-top: auto;
+  }
+}
