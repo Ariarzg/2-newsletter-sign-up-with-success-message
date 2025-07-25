@@ -1,1 +1,36 @@
-import "./style.scss";
+import './style.scss';
+
+const emailInput = document.getElementById('email');
+const validationError = document.querySelector('.validation-error');
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+let isEmailValid = emailValidity();
+showEmailValidity();
+
+document.getElementById('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (isEmailValid) {
+    console.log('submitted');
+  }
+});
+
+emailInput.addEventListener('change', () => {
+  isEmailValid = emailValidity();
+
+  showEmailValidity();
+});
+
+function showEmailValidity() {
+  emailInput.classList.add('email-invalid');
+  validationError.classList.remove('hidden');
+
+  if (isEmailValid) {
+    emailInput.classList.remove('email-invalid');
+    validationError.classList.add('hidden');
+  }
+}
+
+function emailValidity() {
+  return emailRegex.test(emailInput.value);
+}

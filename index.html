@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Frontend Mentor | Newsletter Sign up With Success Message</title>
     <script type="module" src="src/main.js" defer></script>
   </head>
   <body>
@@ -28,10 +28,13 @@
             And much more!
           </li>
         </ul>
-        <form>
-          <label for="email">Email address</label>
+        <form id="form">
+          <div class="input-labels">
+            <label for="email">Email address</label>
+            <p class="validation-error hidden">Valid email required</p>
+          </div>
           <input
-            type="email"
+            type="text"
             name="email"
             id="email"
             placeholder="email@company.com"

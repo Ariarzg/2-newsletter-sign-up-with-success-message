@@ -1,19 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@use 'reset';
 
-@import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 $primary-red: rgba(255, 98, 87);
 $primary-red-transparent: rgba(255, 98, 87, 0.15);
 $blue-700: rgb(54, 56, 78);
 $blue-800: rgb(36, 39, 66);
 $gray: rgba(148, 148, 148);
-$font-stack: system-ui, "Roboto", sans-serif;
+$font-stack: system-ui, 'Roboto', sans-serif;
 
 body {
   display: grid;
   place-items: center;
   background-color: $blue-700;
   font-family: $font-stack;
+  margin: 1rem;
 
   main {
     display: flex;
@@ -51,10 +52,21 @@ body {
         gap: 0.5rem;
         margin-top: 0.75rem;
 
-        label {
-          font-size: 0.8rem;
-          font-weight: 600;
-          color: $blue-800;
+        .input-labels {
+          display: flex;
+          justify-content: space-between;
+
+          label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: $blue-800;
+          }
+
+          .validation-error {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: $primary-red;
+          }
         }
 
         input {
@@ -67,12 +79,6 @@ body {
           border-radius: 0.5rem;
           text-align: left;
           outline: none;
-
-          &:user-invalid {
-            border-color: $primary-red;
-            background-color: $primary-red-transparent;
-            color: $primary-red;
-          }
         }
 
         button {
@@ -96,4 +102,14 @@ body {
       max-height: 35rem;
     }
   }
+}
+
+.email-invalid {
+  border-color: $primary-red !important;
+  background-color: $primary-red-transparent !important;
+  color: $primary-red !important;
+}
+
+.hidden {
+  display: none;
 }
