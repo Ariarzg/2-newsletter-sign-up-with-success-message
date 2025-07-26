@@ -1,4 +1,4 @@
-import './success.scss';
+import '../src/styles/success.scss';
 
 const email = localStorage.getItem('ariarzg-email-validated');
 document.getElementById('success').innerHTML = `
@@ -7,9 +7,9 @@ document.getElementById('success').innerHTML = `
   <p>A confirmation email has been sent to
   <span class="sent-to">${email}</span>.
   Please open it and click the button inside to confirm your subscription.</p>
-  <button class="dismiss">Dismiss message</button>
+  <button class="main-button" id="dismiss-btn">Dismiss message</button>
 `;
 
-document.querySelector('.dismiss').addEventListener('click', () => {
-  window.location = '../index.html';
+document.getElementById('dismiss-btn').addEventListener('click', () => {
+  window.location = '../../index.html';
 });

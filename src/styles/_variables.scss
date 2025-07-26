@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+$accent-red: rgba(255, 98, 87);
+$accent-red-transparent: rgba(255, 98, 87, 0.15);
+$accent-orange: rgb(226, 76, 6);
+$blue-700: rgb(54, 56, 78);
+$blue-800: rgb(36, 39, 66);
+$gray: rgb(172, 172, 172);
+
+$button-gradient: linear-gradient(90deg, $accent-red, $accent-orange);
+
+$font-stack: system-ui, 'Roboto', sans-serif;

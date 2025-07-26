@@ -1,0 +1,47 @@
+@use 'reset.css';
+@use 'variables';
+@use 'form';
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: variables.$blue-700;
+  font-family: variables.$font-stack;
+  margin: 1rem;
+}
+
+main {
+  display: flex;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  color: variables.$blue-800;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding-inline: 3rem;
+  max-width: 30rem;
+
+  h1 {
+    font-size: 3.25rem;
+  }
+
+  ul {
+    padding: 0;
+    margin-top: 0.5rem;
+    li {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      list-style-type: none;
+    }
+  }
+}
+
+img {
+  max-height: 35rem;
+}

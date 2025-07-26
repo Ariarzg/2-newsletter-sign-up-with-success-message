@@ -1,0 +1,41 @@
+@use 'variables';
+
+// Button :
+
+.main-button {
+  color: white;
+  background-color: variables.$blue-800;
+
+  font-weight: 700;
+
+  padding: 1rem;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid black;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: variables.$button-gradient;
+    position: relative;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    content: '';
+    position: absolute;
+    // Make the button's parent isolate so that the z-index doesn't make the color behind the form
+    z-index: -1;
+    inset: 0;
+    background: variables.$button-gradient;
+    border-radius: inherit;
+    transform: translateY(1.5rem);
+    filter: blur(1rem);
+    opacity: 0.25;
+  }
+}

@@ -1,0 +1,66 @@
+@use 'variables';
+@use 'component';
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  isolation: isolate;
+}
+
+.input-labels {
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: variables.$blue-800;
+  }
+
+  .validation-error {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: variables.$accent-red;
+    display: none;
+  }
+}
+
+input {
+  border: 1px solid variables.$gray;
+  border-radius: 0.5rem;
+
+  font-weight: 600;
+  line-height: 1;
+  color: variables.$blue-800;
+
+  padding: 1rem;
+
+  outline: none;
+
+  &::placeholder {
+    color: variables.$gray;
+  }
+
+  &:focus {
+    border-color: variables.$blue-800;
+  }
+}
+
+.email-invalid {
+  .input-labels {
+    .validation-error {
+      display: block;
+    }
+  }
+
+  input:not(:focus) {
+    border-color: variables.$accent-red;
+    color: variables.$accent-red;
+  }
+}
+
+.form-button {
+  margin-top: 1rem;
+}

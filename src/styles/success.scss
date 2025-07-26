@@ -1,0 +1,51 @@
+@use 'reset.css';
+@use 'variables';
+@use 'component';
+
+body {
+  background-color: variables.$blue-700;
+  display: grid;
+  place-items: center;
+  font-family: variables.$font-stack;
+  color: variables.$blue-800;
+}
+
+#success {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  background-color: white;
+  padding: 3rem;
+  border-radius: 2rem;
+  max-width: 27rem;
+}
+
+h1 {
+  font-size: 3.25rem;
+  line-height: 3.25rem;
+}
+
+img {
+  width: 4rem;
+}
+
+.sent-to {
+  font-weight: 700;
+}
+
+@media (max-width: 27rem) {
+  body {
+    background-color: white;
+  }
+
+  #success {
+    height: 100svh;
+    border-radius: 0;
+    padding-top: 10rem;
+  }
+
+  .dismiss {
+    margin-top: auto;
+  }
+}

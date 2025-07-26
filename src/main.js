@@ -1,12 +1,12 @@
-import './style.scss';
+import './styles/style.scss';
 
 const emailInput = document.getElementById('email');
-const validationError = document.querySelector('.validation-error');
+const form = document.getElementById('form');
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 let isEmailValid = emailValidity();
 
-document.getElementById('form').addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   showEmailValidity();
@@ -23,12 +23,10 @@ emailInput.addEventListener('change', () => {
 });
 
 function showEmailValidity() {
-  emailInput.classList.add('email-invalid');
-  validationError.classList.remove('hidden');
+  form.classList.add('email-invalid');
 
   if (isEmailValid) {
-    emailInput.classList.remove('email-invalid');
-    validationError.classList.add('hidden');
+    form.classList.remove('email-invalid');
   }
 }
 
