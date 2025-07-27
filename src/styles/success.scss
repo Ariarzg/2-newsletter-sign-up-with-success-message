@@ -28,7 +28,8 @@ body {
   @include media-queries.mobile {
     height: 100%;
     border-radius: 0;
-    padding-top: 10rem;
+    padding: 1.5rem;
+    padding-top: 8rem;
   }
 }
 
@@ -39,8 +40,12 @@ body {
 }
 
 h1 {
-  font-size: 3.25rem;
+  font-size: variables.$font-heading-fluid;
   line-height: 3.25rem;
+}
+
+.confirmation-text {
+  font-size: variables.$font-paragraph-fluid;
 }
 
 img {

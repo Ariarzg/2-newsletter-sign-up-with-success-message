@@ -10,3 +10,7 @@ $gray: rgb(172, 172, 172);
 $button-gradient: linear-gradient(90deg, $accent-red, $accent-orange);
 
 $font-stack: system-ui, 'Roboto', sans-serif;
+
+$font-heading-fluid: clamp(2.125rem, -0.4464rem + 12.8571vw, 3.25rem);
+$font-paragraph-fluid: clamp(0.875rem, 0.5893rem + 1.4286vw, 1rem);
+$font-label-fluid: clamp(0.675rem, 0.3893rem + 1.4286vw, 0.8rem);

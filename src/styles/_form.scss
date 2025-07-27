@@ -14,13 +14,15 @@ form {
   justify-content: space-between;
 
   label {
-    font-size: 0.8rem;
+    font-size: variables.$font-label-fluid;
+
     font-weight: 600;
     color: variables.$blue-800;
   }
 
   .validation-error {
-    font-size: 0.8rem;
+    font-size: variables.$font-label-fluid;
+
     font-weight: 600;
     color: variables.$accent-red;
     display: none;
@@ -30,6 +32,8 @@ form {
 input {
   border: 1px solid variables.$gray;
   border-radius: 0.5rem;
+
+  font-size: variables.$font-paragraph-fluid;
 
   font-weight: 600;
   line-height: 1;
