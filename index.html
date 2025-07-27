@@ -44,10 +44,22 @@
           </button>
         </form>
       </div>
-      <img
-        src="assets/images/illustration-sign-up-desktop.svg"
-        alt="subscribe image"
-      />
+      <picture>
+        <source
+          media="(max-width: 460px)"
+          srcset="./assets/images/illustration-sign-up-mobile.svg"
+        />
+        <source
+          media="(max-width: 880px)"
+          srcset="./assets/images/illustration-sign-up-tablet.svg"
+        />
+
+        <img
+          src="assets/images/illustration-sign-up-desktop.svg"
+          alt="subscribe image"
+          class="decorative-image"
+        />
+      </picture>
     </main>
   </body>
 </html>

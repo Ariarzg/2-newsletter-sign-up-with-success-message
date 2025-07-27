@@ -1,6 +1,7 @@
 @use 'reset.css';
 @use 'variables';
 @use 'form';
+@use 'media-queries';
 
 body {
   display: grid;
@@ -8,6 +9,12 @@ body {
   background-color: variables.$blue-700;
   font-family: variables.$font-stack;
   margin: 1rem;
+
+  @include media-queries.mobile {
+    margin: 0;
+    display: block;
+    background-color: inherit;
+  }
 }
 
 main {
@@ -16,6 +23,15 @@ main {
   background-color: white;
   border-radius: 1.5rem;
   color: variables.$blue-800;
+
+  @include media-queries.tablet {
+    flex-direction: column-reverse;
+  }
+
+  @include media-queries.mobile {
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
 .container {
@@ -40,8 +56,24 @@ main {
       list-style-type: none;
     }
   }
+
+  @include media-queries.tablet {
+    padding-bottom: 4rem;
+    max-width: none;
+    padding-inline: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  @include media-queries.mobile {
+    max-width: none;
+    padding-bottom: 0rem;
+  }
 }
 
-img {
+.decorative-image {
   max-height: 35rem;
+
+  @include media-queries.mobile {
+    width: 100%;
+  }
 }

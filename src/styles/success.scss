@@ -1,6 +1,7 @@
 @use 'reset.css';
 @use 'variables';
 @use 'component';
+@use 'media-queries';
 
 body {
   background-color: variables.$blue-700;
@@ -8,6 +9,10 @@ body {
   place-items: center;
   font-family: variables.$font-stack;
   color: variables.$blue-800;
+
+  @include media-queries.mobile {
+    background-color: inherit;
+  }
 }
 
 #success {
@@ -19,6 +24,18 @@ body {
   padding: 3rem;
   border-radius: 2rem;
   max-width: 27rem;
+
+  @include media-queries.mobile {
+    height: 100%;
+    border-radius: 0;
+    padding-top: 10rem;
+  }
+}
+
+#dismiss-btn {
+  @include media-queries.mobile {
+    margin-top: auto;
+  }
 }
 
 h1 {
@@ -32,20 +49,4 @@ img {
 
 .sent-to {
   font-weight: 700;
-}
-
-@media (max-width: 27rem) {
-  body {
-    background-color: white;
-  }
-
-  #success {
-    height: 100%;
-    border-radius: 0;
-    padding-top: 10rem;
-  }
-
-  #dismiss-btn {
-    margin-top: auto;
-  }
 }
